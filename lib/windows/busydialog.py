@@ -16,7 +16,7 @@ class BusyDialogReader(WindowReaderBase):
         
     def getMonitoredText(self,isSpeaking=False):
         now = time.time()
-        if now > self.__next__:
+        if now > self.next:
             self.play()
             
     def close(self):

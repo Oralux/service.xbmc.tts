@@ -11,7 +11,7 @@ class TextViewerReader(WindowReaderBase):
         self.doubleChecked = False
 
     def last(self,new):
-        md5sum = new and hashlib.md5(''.join(new)).digest() or None
+        md5sum = new and hashlib.md5(''.join(new).encode('utf-8')).digest() or None
         if md5sum == self._last_md5sum: return True
         self._last_md5sum = md5sum
 

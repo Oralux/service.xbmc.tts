@@ -718,6 +718,62 @@
 						<popup>false</popup>
 					</control>
 				</setting>
+
+				<!-- Voxin -->
+				<setting id="voice.Voxin" type="string" label="32003" help="" parent="backend">
+					<level>0</level>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="backend">Voxin</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action">
+						<data>NotifyAll(service.xbmc.tts,SETTINGS.SETTING_DIALOG,&quot;[\&quot;Voxin\&quot;,\&quot;voice\&quot;]&quot;)</data>
+					</control>
+				</setting>
+				<setting id="speed.Voxin" type="integer" label="32011" help="" parent="backend">
+					<level>0</level>
+					<default>60</default>
+					<constraints>
+						<minimum>0</minimum>
+						<maximum>120</maximum>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="backend">Voxin</condition>
+						</dependency>
+					</dependencies>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="player.Voxin" type="string" label="32007" help="" parent="backend">
+					<level>0</level>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="backend">Voxin</condition>
+						</dependency>
+					</dependencies>
+					<control type="button" format="action">
+						<data>NotifyAll(service.xbmc.tts,SETTINGS.PLAYER_DIALOG,{&quot;backend&quot;:&quot;Voxin&quot;})</data>
+					</control>
+				</setting>
+				<setting id="pipe.Voxin" type="boolean" label="32013" help="" parent="backend">
+					<level>0</level>
+					<default>false</default>
+					<dependencies>
+						<dependency type="visible">
+							<condition operator="is" setting="backend">Voxin</condition>
+						</dependency>
+					</dependencies>
+					<control type="toggle"/>
+				</setting>
 			</group>
 			<group id="2" label="32019">
 				<setting id="perl_server.ttsd" type="boolean" label="32020" help="" parent="">
